@@ -1,0 +1,107 @@
+[Mod 12] Exam Assignment-Diabetes Prediction API & Frontend
+Exam Assignment: Diabetes Prediction API & Frontend
+
+? Dataset:
+Use the Pima Indians Diabetes Dataset
+? https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
+
+? Objective:
+Train a classification model to predict if a patient has diabetes, deploy an API using FastAPI with async, containerize it using Docker, host on Render, and build a simple frontend to take user input and display prediction.
+
+? Instructions:
+1?? Model Training
+    • Use train/test split and proper evaluation
+    • Try at least 2 different classification models:
+        ? Logistic Regression
+        ? Random Forest
+        ? Support Vector Machine (SVM)
+        ? Decision Tree
+        ? K-Nearest Neighbors (KNN)
+    • Use joblib to save the best model (diabetes_model.pkl)
+    • Evaluation Metrics:
+        ? Accuracy
+        ? Precision
+        ? Recall
+        ? F1 Score
+
+2?? FastAPI Backend
+    • Build FastAPI using async endpoints
+    • Endpoints to implement:
+GET /health
+{
+  "status": "ok"
+}
+
+POST /predict (Async)
+Input (JSON):
+{
+  "Pregnancies": 3,
+  "Glucose": 145,
+  "BloodPressure": 70,
+  "SkinThickness": 20,
+  "Insulin": 85,
+  "BMI": 33.6,
+  "DiabetesPedigreeFunction": 0.35,
+  "Age": 29
+}
+
+Output:
+{
+  "prediction": 0,
+  "result": "Not Diabetic",
+  "confidence": 0.87
+}
+
+Bonus: GET /metrics
+Return classification metrics (from test set) as JSON.
+
+3?? Docker Setup
+    • Write a Dockerfile to build and run your FastAPI app
+    • Use joblib model loading inside Docker container
+    • (Optional) Add docker-compose.yml if needed
+
+4?? Render Deployment
+    • Deploy to Render (free) and make sure it’s working
+    • Make sure model loads, and /predict endpoint works
+
+5?? Frontend App (Choose One)
+? Build a frontend app where user inputs values and gets prediction result. You can choose:
+    • Streamlit (Easy)
+    • OR
+    • HTML + CSS + JavaScript
+    • OR
+    • React / Next.js
+The frontend should:
+    • Allow users to enter patient values (form)
+    • Send request to /predict API
+    • Display prediction, result text (Diabetic or Not Diabetic) and confidence
+
+? Submission Checklist
+    • ? Trained model with at least 2 classifiers
+    • ? Evaluation metrics printed
+    • ? Best model saved using joblib
+    • ? FastAPI app with async endpoints
+    • ? Dockerfile present
+    • ? Render deployment (API live)
+    • ? Frontend (Streamlit or Web) integrated with API
+    • ? GitHub repo with clean folder structure
+
+? What to Submit
+    1. ? GitHub Repository
+        ? Should include:
+            ? model training code
+            ? FastAPI backend
+            ? Dockerfile
+            ? frontend code (or link if separate)
+    2. ? Live Render Link (Backend API)
+    3. ? Live Frontend Link (or Streamlit cloud link) (Search Youtube you will find videos)
+
+????????? ????????
+    • Should include:
+        ? model training code
+        ? FastAPI backend
+        ? Dockerfile
+        ? frontend code (or link if separate)
+    1. ? Live Render Link (Backend API)
+    2. ? Live Frontend Link (or Streamlit cloud link) (Search Youtube you will find videos)
+
