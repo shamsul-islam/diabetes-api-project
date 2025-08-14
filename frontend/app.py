@@ -37,7 +37,7 @@ if submitted:
 
     # Send a POST request to the FastAPI backend
     # IMPORTANT: Replace with your deployed Render URL
-    api_url = "http://127.0.0.1:8000/predict"
+    api_url = "https://dashboard.render.com/web/srv-d2f29hadbo4c7391bfh0/predict"
     try:
         response = requests.post(api_url, json=patient_data)
         response.raise_for_status()  # Raise an exception for bad status codes
